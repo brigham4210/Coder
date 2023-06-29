@@ -62,5 +62,3 @@ def decode(s):
         o += c
 
     return o
-
-print(decode("I⚭✡μ⚭✡⚭♪卍σσ."))
