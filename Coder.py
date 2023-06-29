@@ -5,6 +5,7 @@ from kivy.uix.image import Image
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from Encode import encode
+from Decode import decode
 
 
 class Coder(App):
@@ -35,24 +36,35 @@ class Coder(App):
 
         self.window.add_widget(self.words)
 
-        # button widget
-        self.button = Button(
+        # encode button widget
+        self.encode_button = Button(
             text="Encode",
-            size_hint=(1, 0.5),
+            size_hint=(0.5, 0.5),
             bold=True,
-            background_color='#00FFCE',
-            # remove darker overlay of background colour
-            # background_normal = ""
+            background_color='#00FFCE'
         )
-        self.button.bind(on_press=self.callback)
-        self.window.add_widget(self.button)
+        self.encode_button.bind(on_press=self.encode_text)
+        self.window.add_widget(self.encode_button)
+
+        # decode button widget
+        self.decode_button = Button(
+            text="Decode",
+            size_hint=(0.5, 0.5),
+            bold=True,
+            background_color='#00FFCE'
+        )
+        self.decode_button.bind(on_press=self.encode_text)
+        self.window.add_widget(self.decode_button)
 
         return self.window
 
-    def callback(self, instance):
-        # change label text to "Hello + user name!"
+    def encode_text(self, instance):
+        # encode label text
         self.intro.text = encode(self.words.text)
 
+    def decode_text(self, instance):
+        # decode label text
+        self.intro.text = decode(self.words.text)
 
 # run Say Hello App Calss
 if __name__ == "__main__":
