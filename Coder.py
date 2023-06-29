@@ -11,13 +11,18 @@ from Decode import decode
 class Coder(App):
     def build(self):
         # returns a window object with all it's widgets
-        self.window = GridLayout()
-        self.window.cols = 1
-        self.window.size_hint = (0.6, 0.7)
-        self.window.pos_hint = {"center_x": 0.5, "center_y": 0.5}
+        self.head = GridLayout()
+        self.head.cols = 1
+        self.head.size_hint = (0.6, 0.7)
+        self.head.pos_hint = {"center_x": 0.5, "center_y": 0.5}
+
+        self.foot = GridLayout()
+        self.foot.cols = 2
+        self.foot.size_hint = (0.6, 0.7)
+        self.foot.pos_hint = {"center_x": 0.5, "center_y": 0.5}
 
         # image widget
-        self.window.add_widget(Image(source="logo.png"))
+        self.head.add_widget(Image(source="logo.png"))
 
         # label widget
         self.intro = Label(
@@ -25,7 +30,7 @@ class Coder(App):
             font_size=30,
             color='#00FFCE'
         )
-        self.window.add_widget(self.intro)
+        self.head.add_widget(self.intro)
 
         # text input widget
         self.words = TextInput(
@@ -34,7 +39,7 @@ class Coder(App):
             size_hint=(1, 0.5)
         )
 
-        self.window.add_widget(self.words)
+        self.head.add_widget(self.words)
 
         # encode button widget
         self.encode_button = Button(
@@ -44,7 +49,7 @@ class Coder(App):
             background_color='#00FFCE'
         )
         self.encode_button.bind(on_press=self.encode_text)
-        self.window.add_widget(self.encode_button)
+        self.foot.add_widget(self.encode_button)
 
         # decode button widget
         self.decode_button = Button(
@@ -54,9 +59,10 @@ class Coder(App):
             background_color='#00FFCE'
         )
         self.decode_button.bind(on_press=self.encode_text)
-        self.window.add_widget(self.decode_button)
+        self.foot.add_widget(self.decode_button)
+        self.head.add_widget(self.foot)
 
-        return self.window
+        return self.head
 
     def encode_text(self, instance):
         # encode label text
@@ -66,6 +72,7 @@ class Coder(App):
         # decode label text
         self.intro.text = decode(self.words.text)
 
-# run Say Hello App Calss
+
+# run Class
 if __name__ == "__main__":
     Coder().run()
