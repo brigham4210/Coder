@@ -61,5 +61,3 @@ def encode(s):
         o += c
 
     return o
-
-print(encode("I am a boss."))
