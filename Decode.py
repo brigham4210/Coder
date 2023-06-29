@@ -1,5 +1,3 @@
-from Encode import encode
-
 def decode(s):
     s = str(s)
     o = ""
