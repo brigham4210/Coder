@@ -22,7 +22,7 @@ class Coder(App):
         self.foot.pos_hint = {"center_x": 0.5, "center_y": 0.5}
 
         # image widget
-        self.head.add_widget(Image(source="logo.png"))
+        self.head.add_widget(Image(source="Pics/logo.png"))
 
         # label widget
         self.intro = Label(
