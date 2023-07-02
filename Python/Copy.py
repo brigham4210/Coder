@@ -1,7 +1,11 @@
 from kivy.uix.button import Button
+from kivy.core.clipboard import Clipboard
+
+from Output import output_box
 
 
-def copy():
+def copy(instance):
+    Clipboard.copy(output_box.text)
 
 
 copy_button = Button(
@@ -11,4 +15,4 @@ copy_button = Button(
     background_color='#00FFCE'
 )
 
-copy_button.bind(on_press=copy())
+copy_button.bind(on_press=copy)
