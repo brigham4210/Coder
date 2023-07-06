@@ -1,6 +1,6 @@
 import json
 
-with open("Json/maps.json", "r", encoding="utf-8") as f:
+with open("../Json/maps.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 one = data["one"]
