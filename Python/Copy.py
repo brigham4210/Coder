@@ -1,7 +1,7 @@
 from kivy.uix.button import Button
 from kivy.core.clipboard import Clipboard
 
-from Output import output_box
+from Python.OutputBox import output_box
 
 
 def copy(instance):

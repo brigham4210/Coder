@@ -1,11 +1,11 @@
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
-from Logo import logo
-from Output import output_box
-from Copy import copy_button
-from TextBox import textBox
-from Encode import encode_button
-from Decode import decode_button
+from Python.Logo import logo
+from Python.Copy import copy_button
+from Python.TextBox import textBox
+from Python.Encode import encode_button
+from Python.Decode import decode_button
+from Python.OutputBox import output_box
 
 
 class SecretCoder(App):
