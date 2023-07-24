@@ -1,4 +1,4 @@
-from Coder import SecretCoder
+from Python.Coder import SecretCoder
 
 # run Class
 if __name__ == "__main__":
