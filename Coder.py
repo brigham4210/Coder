@@ -36,6 +36,3 @@ class SecretCoder(App):
         return self.body
 
 
-# run Class
-if __name__ == "__main__":
-    SecretCoder("Pics/logo.png").run()
