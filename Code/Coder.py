@@ -1,11 +1,11 @@
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
-from Python.Logo import Logo
-from Python.Copy import copy_button
-from Python.TextBox import textBox
-from Python.Encode import encode_button
-from Python.Decode import decode_button
-from Python.OutputBox import output_box
+from Code.Logo import Logo
+from Code.Copy import copy_button
+from Code.TextBox import textBox
+from Code.Encode import encode_button
+from Code.Decode import decode_button
+from Code.OutputBox import output_box
 
 
 class Body(FloatLayout):

@@ -1,6 +1,6 @@
-from Python.Data import one, two
-from Python.OutputBox import output_box
-from Python.TextBox import textBox
+from Code.Data import one, two
+from Code.OutputBox import output_box
+from Code.TextBox import textBox
 from kivy.uix.button import Button
 
 
