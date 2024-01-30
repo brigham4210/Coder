@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Coder</title>
+</head>
+<body>
+    <h1>Secret Coder</h1>
+
+    <form action="{{ url_for('encode_text') }}" method="post">
+        <label for="text_to_encode">Text to Encode:</label>
+        <input type="text" name="text_to_encode" id="text_to_encode" required>
+        <button type="submit">Encode</button>
+    </form>
+
+    <form action="{{ url_for('decode_text') }}" method="post">
+        <label for="text_to_decode">Text to Decode:</label>
+        <input type="text" name="text_to_decode" id="text_to_decode" required>
+        <button type="submit">Decode</button>
+    </form>
+
+    {% if output_text %}
+        <p>Result: {{ output_text }}</p>
+        <button onclick="copyText('{{ output_text }}')">Copy</button>
+    {% endif %}
+
+    <script>
+        function copyText(text) {
+            var textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Text copied: ' + text);
+        }
+    </script>
+
+</body>
+</html>
