@@ -7,6 +7,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+img {
+    margin: 20px;
+    width: 10%;
+}
+
 .form-container {
     max-width: 90%;
     margin: 10px 0;
@@ -27,7 +32,7 @@ button {
 }
 
 #result-container {
-    margin-top: 20px;
+    margin: 20px;
     padding: 10px;
     border-radius: 5px;
     display: none;
